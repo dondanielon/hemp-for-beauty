@@ -1,0 +1,75 @@
+.container {
+    background-color: var(--color3);
+    color: var(--text);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    box-shadow: 1px -64px 53px 62px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 1px -64px 53px 62px rgba(0,0,0,0.24);
+    -moz-box-shadow: 1px -64px 53px 62px rgba(0,0,0,0.24);
+    justify-content: space-between;
+}
+
+.menuButton {
+    border: none;
+    background-color: transparent;
+    color: var(--text);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: auto;
+    padding: 0;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: 300ms;
+}
+
+.menuButton:hover {
+    color: var(--color1);
+}
+
+.shopButton {
+    border: none;
+    background-color: var(--color3);
+    color: var(--text);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: auto;
+    padding: 0;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: 300ms;
+}
+
+.shopButton:hover {
+    color: var(--color1);
+}
+
+.pageOptions {
+    display: none;
+}
+
+.redirect {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.redirect:hover {
+    color: var(--color1);
+}
+
+@media (min-width: 899px) {
+    .menuButton {
+        margin-left: 3rem;
+    }
+    .shopButton {
+        margin-right: 3rem;
+    } 
+}
+
