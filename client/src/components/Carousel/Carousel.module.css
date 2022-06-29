@@ -3,7 +3,7 @@
   width: 100vw;
   height: 80vh;
   color: var(--color1);
-  contain: content;
+  overflow: hidden;
 }
 
 .image {
@@ -113,6 +113,9 @@
 }
 
 @media (min-width: 899px) {
+  .container {
+    height: calc(100vh - 4rem);
+  }
   .carouselInfo {
     width: calc(100% - 6rem);
     padding-left: 3rem;

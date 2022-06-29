@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import styles from "./SideMenu.module.css"
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 function SideMenu({ set }) {
   const navigate = useNavigate();
+  const [active, setActive] = useState(true);
 
   const goHome = () => {
     navigate("/");
@@ -24,10 +25,19 @@ function SideMenu({ set }) {
     set(false);
   };
 
+  const closeMenu = () => {
+    setActive(false);
+    setTimeout(setToFalse, 299);
+  };
+
+  const setToFalse = () => {
+    set(false)
+  };
+
   return  ReactDOM.createPortal(
     <>
-      <div className={styles.overlay} onClick={(e) => set(false)}/>
-      <div className={styles.menu}>
+      <div className={styles.overlay} onClick={(e) => closeMenu()}/>
+      <div className={active ? styles.menu : styles.close}>
         <div className={styles.logoContainer}/>
         <button onClick={goHome} className={styles.menuButton}><HomeIcon/><label className={styles.buttonLabel}>Inicio</label></button>
         <button onClick={goProducts} className={styles.menuButton}><SearchIcon/><label className={styles.buttonLabel}>Productos</label></button>

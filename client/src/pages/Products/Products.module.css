@@ -1,11 +1,11 @@
 .container {
     display: flex;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
 }
 
 .imageContainer {
-    width: 50%;
+    width: 40%;
     height: 100%;
     object-fit: cover;
     object-position: center;
@@ -16,5 +16,9 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+.productList {
+    width: 60%;
 }
 
