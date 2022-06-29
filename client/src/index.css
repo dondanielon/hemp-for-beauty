@@ -15,11 +15,8 @@ code {
 :root {
   --color1: #F6F6F6;
   --color2: #FFE2E2;
-  --color3: #FFC7C7;
+  --color3: #FFB3AB;
   --color4: #AAAAAA;
   --text: #696969;
 }
 
-.app {
-  background-color: var(--color1);
-}

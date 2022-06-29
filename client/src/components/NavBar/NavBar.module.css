@@ -1,14 +1,21 @@
 .container {
-    background-color: var(--color3);
+    position: fixed;
+    background-color: var(--color1);
     color: var(--text);
     width: 100vw;
     display: flex;
     align-items: center;
-    height: 3.5rem;
+    height: 3rem;
     box-shadow: 1px -64px 53px 62px rgba(0,0,0,0.24);
     -webkit-box-shadow: 1px -64px 53px 62px rgba(0,0,0,0.24);
     -moz-box-shadow: 1px -64px 53px 62px rgba(0,0,0,0.24);
     justify-content: space-between;
+    z-index: 1000;
+}
+
+.splitter {
+    width: 100vw;
+    height: 3rem;
 }
 
 .menuButton {
@@ -26,12 +33,12 @@
 }
 
 .menuButton:hover {
-    color: var(--color1);
+    color: var(--color3);
 }
 
 .shopButton {
     border: none;
-    background-color: var(--color3);
+    background-color: transparent;
     color: var(--text);
     display: flex;
     text-align: center;
@@ -44,7 +51,7 @@
 }
 
 .shopButton:hover {
-    color: var(--color1);
+    color: var(--color3);
 }
 
 .pageOptions {
@@ -64,12 +71,40 @@
     color: var(--color1);
 }
 
+.mainLogo {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-image: url("../../../public/LogoHempSolo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.mainLogo:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 899px) {
     .menuButton {
         margin-left: 3rem;
     }
     .shopButton {
         margin-right: 3rem;
+    }
+    .mainLogo {
+        width: 3.5rem;
+        height: 3.5rem;
     } 
+    .container {
+        height: 4rem;
+    }
+    .splitter {
+        height: 4rem;
+    }
 }
 
