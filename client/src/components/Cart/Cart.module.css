@@ -1,4 +1,5 @@
 .overlay {
+    z-index: 1099;
     position: fixed;
     top: 0;
     left: 0;
@@ -17,12 +18,13 @@
 }
 
 .cart {
+    z-index: 1100;
     position: fixed;
     display: block;
     top: 0;
     right: 0;
     height: 100vh;
-    width: 20rem;
+    width: 18rem;
     background-color: var(--color1);
     border-left: 1px solid var(--color4);
     animation: 300ms ease-out 0s 1 slideInFromRight;
@@ -31,6 +33,6 @@
 
 @media (min-width: 899px) {
     .cart {
-        width: 30rem;
+        width: 25rem;
     } 
 }
