@@ -4,11 +4,9 @@ import styles from "./Products.module.css";
 function Products() {
   return (
     <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <img src="https://i.ibb.co/Bcr7K0r/allvertical.jpg" alt="" className={styles.image} />
-      </div>
-      <div className={styles.productList}>
-        Aqui van los productoskjsdlkfja;lskdjf
+      <img className={styles.image} src="https://i.ibb.co/G9ym9JQ/coleccion.jpg" alt="" />
+      <div className={styles.products}>
+
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: var(--color1);
   min-height: 100vh;
   min-height: fill-available;
   min-height: -webkit-fill-available;
@@ -21,5 +22,10 @@ code {
   --color3: #FFB3AB;
   --color4: #AAAAAA;
   --text: #696969;
+  --dark: #363636;
+  --mobilevh: calc(100vh - 3rem);
+  --desktopvh: calc(100vh - 4rem);
 }
+
+/*GLOBAL CLASSES*/
 
