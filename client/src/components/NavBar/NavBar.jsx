@@ -15,9 +15,13 @@ function NavBar() {
       {openMenu && <SideMenu openMenu={openMenu} set={setOpenMenu} />}
       {openCart && <Cart openMenu={openCart} set={setOpenCart} />}
       <nav className={styles.container}>     
-        <button className={styles.menuButton} onClick={(e) => setOpenMenu(true)}><MenuIcon /></button> 
+        <button className={styles.menuButton} onClick={(e) => setOpenMenu(true)}>
+          <MenuIcon />
+        </button> 
         <NavLink to="/"><button className={styles.mainLogo}></button></NavLink>
-        <button className={styles.shopButton} onClick={(e) => setOpenCart(true)}><ShoppingCartIcon /></button>
+        <button className={styles.shopButton} onClick={(e) => setOpenCart(true)}>
+          <ShoppingCartIcon />
+        </button>
       </nav>
       <div className={styles.splitter}/>
       <Outlet />
