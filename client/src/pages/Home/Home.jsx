@@ -6,7 +6,6 @@ function Home() {
   return (
     <>
       <Carousel />
-      <div className={styles.container}>hola</div>
     </>
   );
 };

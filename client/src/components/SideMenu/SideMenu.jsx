@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import styles from "./SideMenu.module.css"
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 
 function SideMenu({ set }) {
   const navigate = useNavigate();
+  const [active, setActive] = useState(true);
 
   const goHome = () => {
     navigate("/");
@@ -19,22 +20,41 @@ function SideMenu({ set }) {
     navigate("/productos");
     set(false);
   };
-  const goAbout = () => {
-    navigate("/about");
+  const goContact = () => {
+    navigate("/contacto");
     set(false);
+  };
+
+  const closeMenu = () => {
+    setActive(false);
+    setTimeout(setToFalse, 299);
+  };
+
+  const setToFalse = () => {
+    set(false)
   };
 
   return  ReactDOM.createPortal(
     <>
-      <div className={styles.overlay} onClick={(e) => set(false)}/>
-      <div className={styles.menu}>
+      <div className={styles.overlay} onClick={closeMenu}/>
+      <div className={active ? styles.menu : styles.close}>
         <div className={styles.logoContainer}/>
-        <button onClick={goHome} className={styles.menuButton}><HomeIcon/><label className={styles.buttonLabel}>Inicio</label></button>
-        <button onClick={goProducts} className={styles.menuButton}><SearchIcon/><label className={styles.buttonLabel}>Productos</label></button>
-        <button className={styles.menuButton}><InfoIcon/><label className={styles.buttonLabel}>Nosotros</label></button>
-        <button className={styles.menuButton}><PhoneIcon/><label className={styles.buttonLabel}>Contactanos</label></button>
+        <button className={styles.menuButton} onClick={goHome}>
+          <HomeIcon/><label className={styles.buttonLabel}>Inicio</label>
+        </button>
+        <button className={styles.menuButton} onClick={goProducts}>
+          <SearchIcon/><label className={styles.buttonLabel}>Productos</label>
+        </button>
+        <button className={styles.menuButton}>
+          <InfoIcon/><label className={styles.buttonLabel}>Nosotros</label>
+        </button>
+        <button className={styles.menuButton} onClick={goContact}>
+          <PhoneIcon/><label className={styles.buttonLabel}>Contactanos</label>
+        </button>
         <div className={styles.separator}/>
-        <button className={styles.menuButton}><PersonIcon/><label className={styles.buttonLabel}>Iniciar sesion</label></button>
+        <button className={styles.menuButton}>
+          <PersonIcon/><label className={styles.buttonLabel}>Iniciar sesion</label>
+        </button>
       </div>
     </>,
     document.getElementById("portal")

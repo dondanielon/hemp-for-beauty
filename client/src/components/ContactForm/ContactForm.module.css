@@ -1,0 +1,25 @@
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  background-color: var(--color1);
+}
+
+.inputForm {
+    margin-bottom: 1rem;
+    background-color: white;
+    color: red;
+}
+
+.inputField {
+    color: var(--text);
+}
+
+.inputLabel {
+    color: var(--color3);
+}
+
+.inputIcon {
+    color: var(--color3);
+}

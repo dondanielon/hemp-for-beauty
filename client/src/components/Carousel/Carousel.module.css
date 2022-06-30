@@ -3,7 +3,7 @@
   width: 100vw;
   height: 80vh;
   color: var(--color1);
-  contain: content;
+  overflow: hidden;
 }
 
 .image {
@@ -117,5 +117,11 @@
     width: calc(100% - 6rem);
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1199px) {
+  .container {
+    height: var(--desktopvh);
   }
 }
