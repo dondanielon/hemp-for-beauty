@@ -2,22 +2,25 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 25rem;
-  background-color: var(--color1);
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .inputForm {
-    margin-bottom: 1rem;
-    background-color: white;
+    background-color: var(--dark);
+    border-radius: 0.5rem;
     color: red;
+    overflow: hidden;
 }
 
 .inputField {
-    color: var(--text);
+    color: var(--color1);
+    font-size: medium;
 }
 
 .inputLabel {
     color: var(--color3);
+    font-size: small;
 }
 
 .inputIcon {

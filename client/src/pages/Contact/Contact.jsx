@@ -4,8 +4,10 @@ import styles from "./Contact.module.css";
 
 function Contact() {
   return (
-    <div>
-      <ContactForm />
+    <div className={styles.page}>
+      <div className={styles.container}>
+        <ContactForm />
+      </div>
     </div>
   );
 };

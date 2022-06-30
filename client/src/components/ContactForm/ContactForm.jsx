@@ -14,8 +14,8 @@ function ContactForm() {
     name: "",
     email: "",
     phone: "",
-    description: "",
-    reason: "" 
+    reason: "", 
+    description: ""
   });
 
   const handleSubmit = (e) => {
@@ -36,14 +36,18 @@ function ContactForm() {
       autoComplete="off"
       className={styles.form}
     >
-      <TextField 
-        id="name" 
-        label="Nombre" 
-        variant="filled" 
-        value={input.name} 
-        onChange={handleInputChange}
-      />
-      <FormControl className={styles.inputForm} variant="filled">
+      <FormControl className={styles.inputForm} variant="filled"  color="pink">
+      <InputLabel className={styles.inputLabel}>Nombre</InputLabel>
+        <FilledInput
+          className={styles.inputField}
+          id="name"   
+          value={input.name} 
+          onChange={handleInputChange}
+          size="small"
+          color="pink"
+        />
+      </FormControl>
+      <FormControl className={styles.inputForm} variant="filled"  color="pink">
       <InputLabel className={styles.inputLabel}>Email</InputLabel>
         <FilledInput
           className={styles.inputField}
@@ -52,9 +56,10 @@ function ContactForm() {
           onChange={handleInputChange}
           endAdornment={<InputAdornment position="end"><AlternateEmailIcon className={styles.inputIcon}/></InputAdornment>}
           size="small"
+          color="pink"
         />
       </FormControl>
-      <FormControl className={styles.inputForm} variant="filled">
+      <FormControl className={styles.inputForm} variant="filled" color="pink">
         <InputLabel className={styles.inputLabel}>Telefono</InputLabel>
         <FilledInput
           className={styles.inputField}
@@ -63,6 +68,20 @@ function ContactForm() {
           onChange={handleInputChange}
           endAdornment={<InputAdornment position="end"><PhoneIphoneIcon className={styles.inputIcon}/></InputAdornment>}
           size="small"
+          color="pink"
+        />
+      </FormControl>
+      <FormControl className={styles.inputForm} variant="filled" color="pink">
+        <InputLabel className={styles.inputLabel}>Descripcion</InputLabel>
+        <FilledInput
+          className={styles.inputField}
+          id="description"  
+          value={input.description} 
+          onChange={handleInputChange}
+          size="small"
+          color="pink"
+          multiline
+          rows={3}
         />
       </FormControl>
     </Box>

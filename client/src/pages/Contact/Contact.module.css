@@ -1,0 +1,32 @@
+.page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color2);
+    width: 100vw;
+    height: var(--mobilevh);
+}
+
+.container {
+    margin-top: 5rem;
+    margin-bottom: auto;
+    padding: 2rem 2rem;
+    background-color: var(--color1);
+    width: 18rem;
+    border-radius: 0.5rem;
+    box-shadow: -1px -1px 15px 0px rgba(0,0,0,0.47);
+    -webkit-box-shadow: -1px -1px 15px 0px rgba(0,0,0,0.47);
+    -moz-box-shadow: -1px -1px 15px 0px rgba(0,0,0,0.47);
+    font-family: var(--primaryFont);
+}
+
+@media (min-width: 899px) {
+    .page {
+        height: var(--desktopvh);
+    }
+    .container {
+        margin-top: 8rem;
+        margin-bottom: auto;
+        width: 30rem;
+    }
+}
