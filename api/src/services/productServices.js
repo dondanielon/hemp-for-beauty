@@ -3,7 +3,7 @@ const { Product, Op, Ingredient } = require("../db");
 async function getAllProducts ({ order, option }) {
   const products = await Product.findAll({
     order: [[option, order]],
-    attributes: ["id", "name", "weight", "price", "images", "stock"]
+    include: { model: Ingredient, attributes: ["name", "description"], through: { attributes: [] } }
   });
   return {
    message: "Products List",

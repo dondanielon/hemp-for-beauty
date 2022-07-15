@@ -6,7 +6,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
-import PhoneIcon from "@mui/icons-material/Phone";
+import EmailIcon from "@mui/icons-material/Email";
 
 function SideMenu({ set }) {
   const navigate = useNavigate();
@@ -22,6 +22,10 @@ function SideMenu({ set }) {
   };
   const goContact = () => {
     navigate("/contacto");
+    set(false);
+  };
+  const goAbout = () => {
+    navigate("/nosotros");
     set(false);
   };
 
@@ -45,11 +49,11 @@ function SideMenu({ set }) {
         <button className={styles.menuButton} onClick={goProducts}>
           <SearchIcon/><label className={styles.buttonLabel}>Productos</label>
         </button>
-        <button className={styles.menuButton}>
+        <button className={styles.menuButton} onClick={goAbout}>
           <InfoIcon/><label className={styles.buttonLabel}>Nosotros</label>
         </button>
         <button className={styles.menuButton} onClick={goContact}>
-          <PhoneIcon/><label className={styles.buttonLabel}>Contactanos</label>
+          <EmailIcon/><label className={styles.buttonLabel}>Contactanos</label>
         </button>
         <div className={styles.separator}/>
         <button className={styles.menuButton}>

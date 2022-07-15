@@ -21,7 +21,7 @@
 .menuButton {
     border: none;
     background-color: transparent;
-    color: var(--text);
+    color: var(--dark);
     display: flex;
     text-align: center;
     align-items: center;
@@ -39,7 +39,7 @@
 .shopButton {
     border: none;
     background-color: transparent;
-    color: var(--text);
+    color: var(--dark);
     display: flex;
     text-align: center;
     align-items: center;
@@ -62,7 +62,7 @@
     margin-left: .5rem;
     margin-right: .5rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--dark);
     text-decoration: none;
     cursor: pointer;
 }

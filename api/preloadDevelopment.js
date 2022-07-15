@@ -2,23 +2,23 @@ const { Product, Ingredient, Label } = require("./src/db");
 
 const ingredients = [
   { name: "CBD", description: "Efecto antioxidante, el CBD es rico en vitamina E y acido fenólico, poderosos antioxidantes, se encarga de luchar contra los radicales libres, factores externos que intervienen en el envejecimiento de la piel. Es muy recomendable para cuidar pieles sensibles o irritadas." },
-  { name: "LAVANDA", description: "Ingredientes anti-inflamatorios, ayudan a reducir cualquier irritación." },
-  { name: "FILTRO SOLAR", description: "Ayuda a proteger la piel frente a la radiación solar y evita que los rayos UVA y UVB dañen la superficie cutánea, previniendo así el envejecimiento prematuro provocado por el sol." },
-  { name: "ALOE VERA", description: "Anti-inflamatorio y regenerador de tejidos, Puede aplicarse en todo tipo de pieles. Permite tener un rostro más terso debido a su alto contenido de colágeno y la elastina ayuda a prevenir el envejecimiento." },
-  { name: "GLICERINA", description: "Tiene función humectante. Combate la flacidez y atenúa los signos de expresión y arrugas." },
-  { name: "AGUA DE ROSAS", description: "Se utiliza como loción tónica para pieles sensibles y desvitalizadas. Revitaliza pieles maduras." },
-  { name: "ACEITE DE CALENDULA", description: null },
-  { name: "MONOESTERATO DE GLICERILO", description: null },
-  { name: "XANTANA", description: null },
-  { name: "MENTA", description: "Ayuda a retener la humedad evitando el envejecimiento prematuro, actúa sobre el enrojecimiento cutáneo reduciendo la inflamación, potencia la acción refrescante en la piel." },
-  { name: "ACIDO GLICÓLICO", description: "Mejora el proceso de renovación de la piel para conseguir un aspecto rejuvenecido, es el aliado perfecto para eliminar las manchas producidas por el sol, el envejecimiento y el acné. Aporta más hidratación, con lo que mejora la textura y luminosidad de la piel." },
-  { name: "AGUA DESMINERALIZADA", description: null },
-  { name: "LINAZA", description: "Por la cantidad de OMEGA3 que contiene presenta beneficios anti-inflamatorios y nutritivos para la piel. Combate el acné, minimiza manchas en la piel, favorece la regeneración de tejidos de la piel, devuelve la vitalidad a la piel." },
-  { name: "COCOAMIDA PROPIL BETAINA", description: "Estimula la formación de colágeno, indispensable para una piel tersa, regenerador cutáneo, excelente para la hidratación profunda de la piel." },
-  { name: "ACEITE DE CIPRÉS", description: "Tiene propiedades antisépticas, por lo que es perfecto para combatir el acné. Siendo astringente, permitirá cerrar los poros y a eliminar toxinas." },
-  { name: "POLVO DE CASCARA DE NUEZ", description: "Elimina las células superficiales de la piel y eliminas asperezas." },
-  { name: "UREA", description: null },
-  { name: "ALGINATO DE SODIO", description: null }
+  { name: "Lavanda", description: "Ingredientes anti-inflamatorios, ayudan a reducir cualquier irritación." },
+  { name: "Filtro solar", description: "Ayuda a proteger la piel frente a la radiación solar y evita que los rayos UVA y UVB dañen la superficie cutánea, previniendo así el envejecimiento prematuro provocado por el sol." },
+  { name: "Aloe vera", description: "Anti-inflamatorio y regenerador de tejidos, Puede aplicarse en todo tipo de pieles. Permite tener un rostro más terso debido a su alto contenido de colágeno y la elastina ayuda a prevenir el envejecimiento." },
+  { name: "Glicerina", description: "Tiene función humectante. Combate la flacidez y atenúa los signos de expresión y arrugas." },
+  { name: "Agua de rosas", description: "Se utiliza como loción tónica para pieles sensibles y desvitalizadas. Revitaliza pieles maduras." },
+  { name: "Aceite de calendula", description: null },
+  { name: "Monoesterato de glicerilo", description: null },
+  { name: "Xantana", description: null },
+  { name: "Menta", description: "Ayuda a retener la humedad evitando el envejecimiento prematuro, actúa sobre el enrojecimiento cutáneo reduciendo la inflamación, potencia la acción refrescante en la piel." },
+  { name: "Acido glicolico", description: "Mejora el proceso de renovación de la piel para conseguir un aspecto rejuvenecido, es el aliado perfecto para eliminar las manchas producidas por el sol, el envejecimiento y el acné. Aporta más hidratación, con lo que mejora la textura y luminosidad de la piel." },
+  { name: "Agua desmineralizada", description: null },
+  { name: "Linaza", description: "Por la cantidad de OMEGA3 que contiene presenta beneficios anti-inflamatorios y nutritivos para la piel. Combate el acné, minimiza manchas en la piel, favorece la regeneración de tejidos de la piel, devuelve la vitalidad a la piel." },
+  { name: "Cocoamida propil betaina", description: "Estimula la formación de colágeno, indispensable para una piel tersa, regenerador cutáneo, excelente para la hidratación profunda de la piel." },
+  { name: "Aceite de cipres", description: "Tiene propiedades antisépticas, por lo que es perfecto para combatir el acné. Siendo astringente, permitirá cerrar los poros y a eliminar toxinas." },
+  { name: "Polvo de cascara de nuez", description: "Elimina las células superficiales de la piel y eliminas asperezas." },
+  { name: "Urea", description: null },
+  { name: "Alginato de sodio", description: null }
 ];
 
 const products = [
@@ -34,13 +34,9 @@ const products = [
       "Protege la piel de la radiación solar",
       "Crema a base de agua (las cremas elaboradas a base de agua son ideales para pieles grasas, ya que limitan la aparición de brotes por acné, además de que la piel asimila una mejor hidratación, logrando un mejor aspecto, con menores efectos del foto envejecimiento)."
     ],
-    images: [
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg"
-    ], 
+    image: "https://i.ibb.co/gd75pJZ/sun-day-cream.png", 
     stock: 15,
-    ingredients: ["CBD", "LAVANDA", "FILTRO SOLAR", "ALOE VERA", "GLICERINA", "AGUA DE ROSAS", "ACEITE DE CALENDULA", "MONOESTERATO DE GLICERILO", "XANTANA"]
+    ingredients: ["CBD", "Lavanda", "Filtro solar", "Aloe vera", "Glicerina", "Agua de rosas", "Aceite de calendula", "Monoesterato de glicerilo", "Xantana"]
   },
   {
     name: "Night Wear Cream - Crema de Noche",
@@ -53,13 +49,9 @@ const products = [
       "Promueve el rejuvenecimiento de la piel",
       "Crema a base de agua"
     ],
-    images: [
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg"
-    ], 
+    image: "https://i.ibb.co/k2z8Cnr/night-wear-cream.png", 
     stock: 20,
-    ingredients: ["CBD", "ALOE VERA", "GLICERINA", "AGUA DE ROSAS", "MENTA", "ACEITE DE CALENDULA", "MONOESTERATO DE GLICERILO", "XANTANA"]
+    ingredients: ["CBD", "Aloe vera", "Glicerina", "Agua de rosas", "Menta", "Aceite de calendula", "Monoesterato de glicerilo", "Xantana"]
   },
   {
     name: "Serum facial de noche - Acido glicolico",
@@ -70,13 +62,9 @@ const products = [
       "Revitaliza",
       "Reafirma la piel"
     ],
-    images: [
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg"
-    ], 
+    image: "https://i.ibb.co/HGwPspX/facial-serum.png", 
     stock: 20,
-    ingredients: ["CBD", "ACIDO GLICÓLICO", "AGUA DESMINERALIZADA"]
+    ingredients: ["CBD", "Acido glicolico", "Agua desmineralizada"]
   },
   {
     name: "Cleanser gel - Gel limpiador facial",
@@ -88,13 +76,9 @@ const products = [
       "Limpia impurezas",
       "Hidrata la piel"
     ],
-    images: [
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg"
-    ], 
+    image: "https://i.ibb.co/r0rcf53/cleanser-gel.png", 
     stock: 20,
-    ingredients: ["CBD", "LINAZA", "COCOAMIDA PROPIL BETAINA", "ACEITE DE CIPRÉS", "AGUA DESMINERALIZADA", "XANTANA"]
+    ingredients: ["CBD", "Linaza", "Cocoamida propil betaina", "Aceite de cipres", "Agua desmineralizada", "Xantana"]
   },
   {
     name: "Nut Facial Scrub - Exfoliante facial de nuez",
@@ -107,13 +91,9 @@ const products = [
       "Mejora el aspecto de la piel",
       "Mejora la circulación a nivel cutáneo"
     ],
-    images: [
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg",
-        "https://static.cdn.packhelp.com/wp-content/uploads/2019/06/06153013/plain-shipping-boxes-packhelp-kva.jpg"
-    ], 
+    image: "https://i.ibb.co/2tbF5pM/nut-facial.png", 
     stock: 20,
-    ingredients: ["CBD", "POLVO DE CASCARA DE NUEZ", "GLICERINA", "ALOE VERA", "MENTA", "UREA", "XANTANA", "ALGINATO DE SODIO"]
+    ingredients: ["CBD", "Polvo de cascara de nuez", "Glicerina", "Aloe vera", "Menta", "Urea", "Xantana", "Alginato de sodio"]
   },
 ];
 
@@ -131,7 +111,7 @@ async function preloadProducts() {
         name: product.name,
         weight: product.weight,
         price: product.price,
-        images: product.images,
+        image: product.image,
         specs: product.specs,
         stock: product.stock
       }

@@ -76,6 +76,11 @@
     background-color: var(--color3);
 }
 
+.total {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (min-width: 899px) {
     .cart {
         width: 25rem;
