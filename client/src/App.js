@@ -5,6 +5,8 @@ import Home from './pages/Home/Home';
 import Products from './pages/Products/Products';
 import Contact from './pages/Contact/Contact';
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Footer from './components/Footer/Footer';
+import About from './pages/About/About';
 
 const theme = createTheme({
   palette: {
@@ -25,6 +27,9 @@ const theme = createTheme({
     },
     darkGrey: {
       main: "#363636"
+    },
+    darkPink: {
+      main: "#F38E82"
     }
   }
 });
@@ -38,8 +43,10 @@ function App() {
             <Route path="/" element={<Home />}/>
             <Route path="/productos" element={<Products />} />
             <Route path="/contacto" element={<Contact />} />
+            <Route path="/nosotros" element={<About />} />
           </Route>
         </Routes>
+        <Footer/>
       </div>
     </ThemeProvider>
   );

@@ -60,7 +60,7 @@
     border: none;
     width: 100%;
     background-color: transparent;
-    color: var(--text);
+    color: var(--dark);
     font-size: medium;
     padding: 0.5rem 0rem;
     margin-bottom: .5rem;
