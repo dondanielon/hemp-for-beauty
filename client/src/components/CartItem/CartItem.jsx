@@ -13,12 +13,13 @@ function CartItem(props) {
 
   return (
     <div className={styles.container}>
-      {/* AQUI VA LA IMAGEN */}
+      <img className={styles.image} src={props.image} alt={props.name} />
       <div className={styles.info}>
-        <label>{props.name}</label>
-        <label>Cantidad: {props.qty}</label>
+        <label className={styles.infoName}>{props.name}</label>
+        <label className={styles.infoLabel}>Precio: ${props.price}</label>
+        <label className={styles.infoLabel}>Cantidad: {props.qty}</label>
       </div>
-      <button onClick={removeItem}><DeleteForeverIcon/></button>
+      <button className={styles.remove} onClick={removeItem}><DeleteForeverIcon/></button>
     </div>
   );
 }

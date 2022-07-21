@@ -1,9 +1,41 @@
 .container {
   display: flex;
+  padding: 1rem 0;
+  width: 100%;
   gap: 1rem;
+  align-items: center;
+  font-family: var(--primaryFont);
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  width: 70%;
+  color: var(--dark);
+}
+
+.image {
+  object-position: center;
+  object-fit: contain;
+  height: 4rem;
+}
+
+.remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color5);
+  padding: 0;
+  height: 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.infoName {
+  font-weight: 500;
+}
+
+.infoLabel {
+  font-size: small;
 }

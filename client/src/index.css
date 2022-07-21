@@ -23,6 +23,7 @@ code {
   --color3: #FFB3AB;
   --color3dark: #f38e82;
   --color4: #AAAAAA;
+  --color5: #de4f4f; 
   --text: #696969;
   --dark: #363636;
   --mobilevh: calc(100vh - 3rem);

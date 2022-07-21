@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Carousel.module.css";
+import { useNavigate } from "react-router-dom";
 
 const imageSlider = [
   {
     name: "Acerca de nosotros",
     description: "Mas informacion acerca de Hemp for Beauty.",
     btn: "Conocenos",
-    url: "https://i.ibb.co/L8HwmjQ/facetwo.jpg"
+    url: "https://i.ibb.co/ph7pJYD/image0-1-3-2.jpg",
+    to: "/nosotros"
   },
   {
     name: "Productos",
     description: "Ve a nuestro catalogo.",
     btn: "Ver productos",
-    url: "https://i.ibb.co/ww1B2GX/all.jpg"
+    url: "https://i.ibb.co/ww1B2GX/all.jpg",
+    to: "/productos"
   }
 ];
 
 function Carousel() {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   function next() {
@@ -39,7 +43,7 @@ function Carousel() {
       <div className={styles.carouselInfo}>
         <label className={styles.title}>{imageSlider[currentIndex].name.toLocaleUpperCase()}</label>
         <label className={styles.description}>{imageSlider[currentIndex].description}</label>
-        <button className={styles.redirect}>{imageSlider[currentIndex].btn.toLocaleUpperCase()}</button>
+        <button className={styles.redirect} onClick={() => navigate(imageSlider[currentIndex].to)}>{imageSlider[currentIndex].btn.toLocaleUpperCase()}</button>
         <div className={styles.dotContainer}>
           {imageSlider.length && imageSlider.map((e, k) => <span key={k + 1} className={currentIndex !== k ? styles.dot : styles.activeDot} onClick={() => setCurrentIndex(k)}></span>)}
         </div>
