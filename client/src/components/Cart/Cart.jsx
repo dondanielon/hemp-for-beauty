@@ -32,7 +32,7 @@ function Cart({ set }) {
         <div className={styles.closeDiv}>
           <button className={styles.closeBtn} onClick={(e) => closeMenu()}><CloseIcon/></button>
         </div>
-        <div>
+        <div className={styles.list}>
           {
             cartList.length 
             ? cartList.map((item) => {
@@ -42,15 +42,16 @@ function Cart({ set }) {
                 name={item.name}
                 qty={item.qty}
                 image={item.image}
+                price={item.price}
               />)
             }) 
-            : "El carrito esta vacio"
+            : <p className={styles.empty}>El carrito esta vacio.</p>
           }
           {
             cartList.length 
             ? <div className={styles.total}>
-                <label>Total: ${total}</label>
-                <button>Proceder al pago</button>
+                <label className={styles.amount}>Total: ${total}</label>
+                <button className={styles.checkout}>Proceder al pago</button>
               </div> 
             : null
           }

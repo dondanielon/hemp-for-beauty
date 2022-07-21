@@ -7,10 +7,12 @@ import InfoIcon from "@mui/icons-material/Info";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
+import LoginForm from "../LoginForm/LoginForm";
 
 function SideMenu({ set }) {
   const navigate = useNavigate();
   const [active, setActive] = useState(true);
+  const [login, setLogin] = useState(false);
 
   const goHome = () => {
     navigate("/");
@@ -42,7 +44,7 @@ function SideMenu({ set }) {
     <>
       <div className={styles.overlay} onClick={closeMenu}/>
       <div className={active ? styles.menu : styles.close}>
-        <div className={styles.logoContainer}/>
+        
         <button className={styles.menuButton} onClick={goHome}>
           <HomeIcon/><label className={styles.buttonLabel}>Inicio</label>
         </button>
@@ -56,9 +58,14 @@ function SideMenu({ set }) {
           <EmailIcon/><label className={styles.buttonLabel}>Contactanos</label>
         </button>
         <div className={styles.separator}/>
-        <button className={styles.menuButton}>
-          <PersonIcon/><label className={styles.buttonLabel}>Iniciar sesion</label>
-        </button>
+        {
+          login ?
+          <LoginForm />
+          :
+          <button className={styles.menuButton} onClick={() => setLogin(true)}>
+            <PersonIcon/><label className={styles.buttonLabel}>Iniciar sesion</label>
+          </button>
+        }
       </div>
     </>,
     document.getElementById("portal")

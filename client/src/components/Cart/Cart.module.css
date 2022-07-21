@@ -52,6 +52,7 @@
     border-left: 1px solid var(--color4);
     animation: 300ms ease-in-out 0s 1 slideInFromRight;
     padding: 0.5rem 0.5rem;
+    font-family: var(--primaryFont);
 }
 
 .closeDiv {
@@ -79,6 +80,42 @@
 .total {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+}
+
+.empty{
+    text-align: center;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--primaryFont);
+    color: var(--dark);
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.amount {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.checkout {
+    background-color: var(--dark);
+    border: none;
+    color: var(--color1);
+    padding: 0.5rem;
+    border-radius: .2rem;
+    font-size: 0.8rem;
+    font-family: var(--primaryFont);
+    cursor: pointer;
+}
+
+.checkout:hover {
+    background-color: var(--text);
 }
 
 @media (min-width: 899px) {
