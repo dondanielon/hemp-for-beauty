@@ -1,0 +1,126 @@
+.options{ 
+    width: 100%;
+    height: 16rem;
+}
+
+.loaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: auto 0;
+    height: 16rem;
+}
+
+.subtitle {
+    margin-left: 1.5rem;
+    font-weight: 500;
+}
+
+.stockManager {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% -4rem);
+    padding: 1rem 2rem;
+    gap: 1rem;
+}
+
+.stockManagerOption {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+}
+
+.optionTitle {
+    width: 30%;
+    font-size: 0.9rem;
+}
+
+.optionsSelect {
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid var(--color3);
+    font-family: var(--primaryFont);
+    outline: none;
+    background-color: white;
+}
+
+.quantity {
+    width: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid var(--color3);
+    font-family: var(--primaryFont);
+    outline: none;
+    background-color: white;
+}
+
+.quantity::-webkit-outer-spin-button,
+.quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.quantity[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.add {
+    background-color: var(--add-color);
+    border: none;
+    color: var(--color1);
+    padding: 0.5rem;
+    border-radius: .2rem;
+    font-size: 0.8rem;
+    font-family: var(--primaryFont);
+    cursor: pointer;
+}
+
+.add:hover {
+    background-color: var(--add-color-hover);
+}
+
+.remove {
+    background-color: var(--remove-color);
+    border: none;
+    color: var(--color1);
+    padding: 0.5rem;
+    border-radius: .2rem;
+    font-size: 0.8rem;
+    font-family: var(--primaryFont);
+    cursor: pointer;
+}
+
+.remove:hover {
+    background-color: var(--remove-color-hover);
+}
+
+.disabledBtn {
+    background-color: var(--disabledBtn);
+    border: none;
+    color: var(--color1);
+    padding: 0.5rem;
+    border-radius: .2rem;
+    font-size: 0.8rem;
+    font-family: var(--primaryFont);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+
+
+.message {
+    font-size: small;
+    color: var(--add-color);
+}
+
+@media (min-width: 899px) {
+    .stockManager {
+        padding: 1rem 7rem;
+        width: calc(100% -14rem);
+    } 
+}

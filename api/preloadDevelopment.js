@@ -1,4 +1,8 @@
-const { Product, Ingredient, Label } = require("./src/db");
+const { Product, Ingredient, User } = require("./src/db");
+const bcrypt = require("bcrypt");
+
+require("dotenv").config();
+const { SALT_ROUNDS, CRYPT_KEY, ADMIN_ROLE } = process.env;
 
 const ingredients = [
   { name: "CBD", description: "Efecto antioxidante, el CBD es rico en vitamina E y acido fenólico, poderosos antioxidantes, se encarga de luchar contra los radicales libres, factores externos que intervienen en el envejecimiento de la piel. Es muy recomendable para cuidar pieles sensibles o irritadas." },
@@ -63,7 +67,7 @@ const products = [
       "Reafirma la piel"
     ],
     image: "https://i.ibb.co/HGwPspX/facial-serum.png", 
-    stock: 20,
+    stock: 23,
     ingredients: ["CBD", "Acido glicolico", "Agua desmineralizada"]
   },
   {
@@ -77,7 +81,7 @@ const products = [
       "Hidrata la piel"
     ],
     image: "https://i.ibb.co/r0rcf53/cleanser-gel.png", 
-    stock: 20,
+    stock: 11,
     ingredients: ["CBD", "Linaza", "Cocoamida propil betaina", "Aceite de cipres", "Agua desmineralizada", "Xantana"]
   },
   {
@@ -92,10 +96,20 @@ const products = [
       "Mejora la circulación a nivel cutáneo"
     ],
     image: "https://i.ibb.co/2tbF5pM/nut-facial.png", 
-    stock: 20,
+    stock: 18,
     ingredients: ["CBD", "Polvo de cascara de nuez", "Glicerina", "Aloe vera", "Menta", "Urea", "Xantana", "Alginato de sodio"]
   },
 ];
+
+
+const admin = {
+  email: "admin@admin.hemp",
+  password: "1234",
+  firstName: "Admin",
+  lastName: "A1",
+  phone: "0000000000",
+  role: ADMIN_ROLE
+};
 
 async function preloadProducts() {
   await Promise.all(ingredients.map(async (ingredient) => {
@@ -118,6 +132,15 @@ async function preloadProducts() {
     });
     await newProduct.setIngredients(product.ingredients)
   }));
+  const hash = await bcrypt.hash(`${admin.password}${CRYPT_KEY}`, parseInt(SALT_ROUNDS));
+  await User.create({
+    email: admin.email.toLocaleLowerCase(),
+    password: hash,
+    firstName: admin.firstName,
+    lastName: admin.lastName,
+    phone: admin.phone,
+    role: admin.role
+  });
 }
 
 module.exports = {

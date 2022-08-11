@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./CartItem.module.css";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../redux/actions";
+import { removeSpecificToCart, addSpecificToCart } from "../../redux/actions";
 
 function CartItem(props) {
   const dispatch = useDispatch();
+  const [stockLimit, setStockLimit] = useState(false);
 
-  const removeItem = () => {
-    dispatch(removeFromCart(props.id))
-  };
+  useEffect(() => {
+    if (props.qty >= props.stock) setStockLimit(true);
+    else setStockLimit(false);
+  }, [props])
 
   return (
     <div className={styles.container}>
@@ -19,7 +22,10 @@ function CartItem(props) {
         <label className={styles.infoLabel}>Precio: ${props.price}</label>
         <label className={styles.infoLabel}>Cantidad: {props.qty}</label>
       </div>
-      <button className={styles.remove} onClick={removeItem}><DeleteForeverIcon/></button>
+      <div className={styles.btns}>
+        <button className={styles.remove} onClick={() => dispatch(removeSpecificToCart(props.id, 1))}><RemoveCircleIcon/></button>
+        <button className={stockLimit ? styles.disabled : styles.add} onClick={() => dispatch(addSpecificToCart(props.id, 1))} disabled={stockLimit}><AddCircleIcon/></button>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.container{
+    width: 100%;
+}
+
+.progress {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    background-color: var(--color2);
+}
+
+.dot {
+    height: 4px;
+    width: 4px;
+    background-color: var(--color4);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active {
+    color: var(--dark);
+}
+.inactive {
+    color: var(--color4);
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import styles from "./SideMenu.module.css"
 import { useNavigate } from "react-router-dom";
@@ -8,25 +8,34 @@ import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import LoginForm from "../LoginForm/LoginForm";
+import useAuth from "../../hooks/useAuth";
+import UserOptions from "../UserOptions/UserOptions";
+import AdminOptions from "../AdminOptions/AdminOptions";
 
 function SideMenu({ set }) {
   const navigate = useNavigate();
+  const { isAuthenticated, accessToken, permissions } = useAuth();
   const [active, setActive] = useState(true);
   const [login, setLogin] = useState(false);
 
-  const goHome = () => {
+  useEffect(() => {
+    document.body.style.overflowY = 'hidden';
+    return ()=> document.body.style.overflowY = 'unset';
+ }, []);
+
+  const redirectToHome = () => {
     navigate("/");
     set(false);
   };
-  const goProducts = () => {
+  const redirectToProducts = () => {
     navigate("/productos");
     set(false);
   };
-  const goContact = () => {
+  const redirectToContact = () => {
     navigate("/contacto");
     set(false);
   };
-  const goAbout = () => {
+  const redirectToAboutUs = () => {
     navigate("/nosotros");
     set(false);
   };
@@ -44,27 +53,31 @@ function SideMenu({ set }) {
     <>
       <div className={styles.overlay} onClick={closeMenu}/>
       <div className={active ? styles.menu : styles.close}>
-        
-        <button className={styles.menuButton} onClick={goHome}>
-          <HomeIcon/><label className={styles.buttonLabel}>Inicio</label>
+        <button className="menuButton" onClick={redirectToHome}>
+          <HomeIcon/><label className="buttonLabel">Inicio</label>
         </button>
-        <button className={styles.menuButton} onClick={goProducts}>
-          <SearchIcon/><label className={styles.buttonLabel}>Productos</label>
+        <button className="menuButton" onClick={redirectToProducts}>
+          <SearchIcon/><label className="buttonLabel">Productos</label>
         </button>
-        <button className={styles.menuButton} onClick={goAbout}>
-          <InfoIcon/><label className={styles.buttonLabel}>Nosotros</label>
+        <button className="menuButton" onClick={redirectToAboutUs}>
+          <svg className={styles.mainLogo}/><label className="buttonLabel">Nosotros</label>
         </button>
-        <button className={styles.menuButton} onClick={goContact}>
-          <EmailIcon/><label className={styles.buttonLabel}>Contactanos</label>
+        <button className="menuButton" onClick={redirectToContact}>
+          <EmailIcon/><label className="buttonLabel">Contactanos</label>
         </button>
         <div className={styles.separator}/>
         {
-          login ?
-          <LoginForm />
-          :
-          <button className={styles.menuButton} onClick={() => setLogin(true)}>
-            <PersonIcon/><label className={styles.buttonLabel}>Iniciar sesion</label>
-          </button>
+          isAuthenticated && permissions ? (
+            <AdminOptions set={set} styles={styles}/>
+          ) : isAuthenticated && !permissions ? (
+            <UserOptions set={set} styles={styles}/>
+          ) : login && !isAuthenticated ? (
+            <LoginForm />
+          ) : (
+            <button className="menuButton" onClick={() => setLogin(true)}>
+              <PersonIcon/><label className="buttonLabel">Iniciar sesion</label>
+            </button>
+          )
         }
       </div>
     </>,

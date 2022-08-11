@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./ProductCardContainer.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions";
@@ -9,7 +9,8 @@ function ProductCardContainer() {
   const products = useSelector((state) => state.products);
 
   useEffect(() => {
-    dispatch(getProducts());
+    if (products.length) return;
+    else  dispatch(getProducts());
   },[dispatch]);
 
   return (

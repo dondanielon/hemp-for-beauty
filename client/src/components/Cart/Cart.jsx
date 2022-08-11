@@ -4,11 +4,19 @@ import styles from "./Cart.module.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector } from "react-redux";
 import CartItem from "../CartItem/CartItem";
+import { useNavigate } from "react-router-dom";
 
 function Cart({ set }) {
+  const navigate = useNavigate();
   const cartList = useSelector((state) => state.cartList);
+  const products = useSelector((state) => state.products);
   const [active, setActive] = useState(true);
   const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    document.body.style.overflowY = 'hidden';
+    return ()=> document.body.style.overflowY = 'unset';
+  }, []);
 
   useEffect(() => {
     let total = 0;
@@ -35,14 +43,17 @@ function Cart({ set }) {
         <div className={styles.list}>
           {
             cartList.length 
-            ? cartList.map((item) => {
+            ? cartList.map((product) => {
+              const stockAvaliable = products.find((item) => item.id === product.id).stock
+
               return (<CartItem 
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                qty={item.qty}
-                image={item.image}
-                price={item.price}
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                qty={product.qty}
+                image={product.image}
+                price={product.price}
+                stock={stockAvaliable}
               />)
             }) 
             : <p className={styles.empty}>El carrito esta vacio.</p>
@@ -51,7 +62,7 @@ function Cart({ set }) {
             cartList.length 
             ? <div className={styles.total}>
                 <label className={styles.amount}>Total: ${total}</label>
-                <button className={styles.checkout}>Proceder al pago</button>
+                <button className={styles.checkout} onClick={() => navigate("/proceso-compra")}>Proceder al pago</button>
               </div> 
             : null
           }

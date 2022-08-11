@@ -5,7 +5,7 @@ import EmailIcon from "@mui/icons-material/Email";
 
 function Contact() {
   return (
-    <div className={styles.page}>
+    <div className="page">
       <div className={styles.container}>
         <label className={styles.title}><EmailIcon fontSize="large"/>CONTACTANOS</label>
         <ContactForm />
