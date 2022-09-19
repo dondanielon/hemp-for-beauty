@@ -1,21 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./MakeOrderAs.module.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import InfoIcon from '@mui/icons-material/Info';
+import { setClientInfo } from "../../redux/actions";
+import { useDispatch } from "react-redux";
 
 function OptionGuest({ setSelection }) {
+  const dispatch = useDispatch();
   const [input, setInput] = useState({
     email: "",
     phone: ""
   });
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    setErrors(validate(input));
+  }, [input]);
 
   const handleGuestInfo = (e) => {
     e.preventDefault();
+    setSubmitted(true);
+    if (Object.keys(errors).length === 0) {
+      dispatch(setClientInfo(input));
+      setSelection("SELECT_BUY_AS_GUEST");
+    }
   }
 
   const handleGoBack = (e) => {
     e.preventDefault();
-    setSelection("none");
+    setSelection("NONE");
   }
 
   const handleInputChange = (e) => {
@@ -41,6 +55,7 @@ function OptionGuest({ setSelection }) {
           value={input.email}
           onChange={handleInputChange}
         />
+        {submitted && errors.email && <label className={styles.errorEmail}>{errors.email}</label>}
         <input 
           type="text" 
           autoComplete="off" 
@@ -50,12 +65,27 @@ function OptionGuest({ setSelection }) {
           value={input.phone}
           onChange={handleInputChange}
         />
+        {submitted && errors.phone && <label className={styles.errorPhone}>{errors.phone}</label>}
       </div>
       <div className={styles.bottom}>
         <button type="submit" className={styles.confirm}>Confirmar</button>
       </div>
     </form>
   );
+}
+
+function validate(input) {
+  let errors = {};
+  const validEmail = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
+  const validPhone = new RegExp(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)
+
+  if (!input.email) errors.email = "campo requerido";
+  else if (!validEmail.test(input.email)) errors.email = "email invalido";
+
+  if (!input.phone) errors.phone = "campo requerido";
+  else if (!validPhone.test(input.phone)) errors.phone = "telefono invalido";
+
+  return errors;
 }
 
 export default OptionGuest;

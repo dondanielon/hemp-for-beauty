@@ -1,31 +1,34 @@
-const nodemailer = require("nodemailer");
+const mailjet = require("node-mailjet").connect(
+  process.env.MAILJET_API_KEY,
+  process.env.MAILJET_SECRET_KEY
+);
 require("dotenv").config();
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.MAIN_EMAIL,
-    pass: process.env.MAIN_EMAIL_PASSWORD
-  }
+const request = mailjet.post("send", { version: "v3.1" }).request({
+  Messages: [
+    {
+      From: {
+        Email: "dan.code.mx@gmail.com",
+        Name: "Daniel",
+      },
+      To: [
+        {
+          Email: "becse.ca@gmail.com",
+          Name: "Daniel",
+        },
+      ],
+      Subject: "Greetings from Mailjet.",
+      TextPart: "My first Mailjet email",
+      HTMLPart:
+        "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+      CustomID: "AppGettingStartedTest",
+    },
+  ],
 });
-
-transporter.verify((error, succes) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("server is ready to send mails");
-  }
+request
+  .then((result) => {
+    console.log(result.body);
+  })
+  .catch((err) => {
+    console.log(err.statusCode);
   });
-
-const mailOptions = {
-  from: `DEV TEAM ${process.env.MAIN_EMAIL}`,
-  to: "becse.ca@gmail.com",
-  subject: "PRIORITY",
-  text: "Wassup homie"
-};
-
-transporter.sendMail(mailOptions, (error, info) => {
-  if (error) console.log(error);
-  else console.log(info.res);
-});
-

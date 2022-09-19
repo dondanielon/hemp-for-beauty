@@ -5,7 +5,7 @@ import styles from "./Products.module.css";
 function Products() {
   return (
     <div>
-      <img className={styles.image} src="https://i.ibb.co/G9ym9JQ/coleccion.jpg" alt="" />
+      <img className={styles.image} src="https://i.ibb.co/dr6Pt40/allplants.jpg" alt="" />
       <ProductCardContainer />
     </div>
   );

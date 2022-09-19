@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./MakeOrderAs.module.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
+import useAuth from '../../hooks/useAuth';
 
 function OptionUser({ setSelection }) {
   const [isRegisterSelected, setIsRegisterSelected] = useState(false);
+  const {isAuthenticated} = useAuth();
+
+  useEffect(() => {
+    if (isAuthenticated) setSelection("SELECT_BUY_AS_USER");
+  }, [isAuthenticated])
 
   const handleGoBack = (e) => {
     e.preventDefault();
-    setSelection("none");
+    setSelection("NONE");
   }
 
   return (

@@ -5,6 +5,15 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
 function Footer() {
+
+  const goToInstagram = () => {
+    window.open("https://www.instagram.com/hempforbeauty/", "_blank")
+  }
+
+  const goToFacebook = () => {
+    window.open("https://www.facebook.com/Hemp-for-Beauty-112013558208365", "_blank")
+  }
+
   return (
     <>
       <Outlet />
@@ -17,8 +26,8 @@ function Footer() {
             estrella.
           </label>
           <div className={styles.social}>
-            <button className={styles.socialBtn}><InstagramIcon fontSize="large"/></button>
-            <button className={styles.socialBtn}><FacebookIcon fontSize="large"/></button>
+            <button className={styles.socialBtn} onClick={goToInstagram}><InstagramIcon fontSize="large"/></button>
+            <button className={styles.socialBtn} onClick={goToFacebook}><FacebookIcon fontSize="large"/></button>
           </div>
         </div>
         <div className={styles.divider}/>
@@ -27,9 +36,9 @@ function Footer() {
           <NavLink to="/productos" className={styles.option}>Productos</NavLink>
           <NavLink to="/nosotros" className={styles.option}>Nosotros</NavLink>
           <NavLink to="/contacto" className={styles.option}>Contactanos</NavLink>
-          <NavLink to="/" className={styles.option}>Pagos y Envíos</NavLink>
-          <NavLink to="/" className={styles.option}>Cambios y devoluciones</NavLink>
-          <NavLink to="/" className={styles.option}>Políticas de Privacidad</NavLink>
+          <NavLink to="/pagos-y-envios" className={styles.option}>Pagos y Envíos</NavLink>
+          <NavLink to="/cambios-y-devoluciones" className={styles.option}>Cambios y devoluciones</NavLink>
+          <NavLink to="/politicas-privacidad" className={styles.option}>Políticas de Privacidad</NavLink>
         </div>
       </div>
     </>

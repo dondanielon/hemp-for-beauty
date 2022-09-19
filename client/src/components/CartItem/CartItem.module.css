@@ -32,7 +32,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-  color: var(--text );
+  color: var(--color3 );
 }
 
 .disabled {

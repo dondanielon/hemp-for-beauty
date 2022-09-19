@@ -37,10 +37,10 @@ function ProductCard(props) {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.fade}`}>
       <div className={styles.main}>
         <div className={styles.mainTop}>
-          <img className={styles.image} src={props.image} alt={props.name} />
+          <img className={`${styles.image} ${styles.scaledown}`} src={props.image} alt={props.name} />
           <div className={styles.mainInfo}>
             <label>{props.name}</label>
             <label><label style={{fontSize: "smaller", fontWeight: "500"}}>$</label>{props.price}</label>

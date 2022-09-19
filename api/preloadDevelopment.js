@@ -29,7 +29,7 @@ const products = [
   {
     name: "Sun Day Cream - Crema de dia",
     price: 549,
-    weight: "50gr",
+    weight: "40gr",
     specs: [
       "Se utiliza como loción tónica para pieles sensibles y desvitalizadas. Revitaliza pieles maduras",
       "Elimina manchas en la piel",
@@ -45,7 +45,7 @@ const products = [
   {
     name: "Night Wear Cream - Crema de Noche",
     price: 349,
-    weight: "50gr",
+    weight: "40gr",
     specs: [
       "Para piel normal y grasa",
       "Elimina manchas en la piel",

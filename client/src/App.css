@@ -11,81 +11,112 @@
     margin-bottom: .5rem;
     transition: 300ms;
     font-family: var(--primaryFont);
-  }
-  
-  .menuButton:hover {
-    background-color: var(--color2);
-    cursor: pointer;
-  }
-  
-  .buttonLabel {
-    margin-left: 1rem;
-  }
-  .buttonLabel:hover {
-    cursor: pointer;
-  }
+}
 
-  .continue-payment{
-    width: 11rem;
-    padding: 0.7rem 0;
-    font-family: var(--primaryFont);
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.4rem;
-    background-color: var(--add-color);
-    color: var(--color1);
-    cursor: pointer;
-  }
+.menuButton:hover {
+  background-color: var(--color2);
+  cursor: pointer;
+}
 
-  .continue-payment:hover {
-    background-color: var(--add-color-hover);
-  }
+.buttonLabel {
+  margin-left: 1rem;
+}
+.buttonLabel:hover {
+  cursor: pointer;
+}
 
-  .continue-disabled {
-    width: 11rem;
-    padding: 0.7rem 0;
-    font-family: var(--primaryFont);
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.4rem;
-    background-color: rgb(135, 135, 135);
-    color: var(--color1);
-  }
+.continue-payment{
+  width: 11rem;
+  padding: 0.7rem 0;
+  font-family: var(--primaryFont);
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: var(--add-color);
+  color: var(--color1);
+  cursor: pointer;
+}
 
-  .exit-payment{
-    width: 11rem;
-    padding: 0.7rem 0;
-    font-family: var(--primaryFont);
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.4rem;
-    background-color: var(--remove-color);
-    color: var(--color1);
-    cursor: pointer;
-  }
+.continue-payment:hover {
+  background-color: var(--add-color-hover);
+}
 
-  .exit-payment:hover {
-    background-color: var(--remove-color-hover);
-  }
+.continue-disabled {
+  width: 11rem;
+  padding: 0.7rem 0;
+  font-family: var(--primaryFont);
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: rgb(135, 135, 135);
+  color: var(--color1);
+}
 
-  /* paginas */
-  
-  .page {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    background-color: var(--color1);
-    width: 100vw;
-    height: var(--mobilevh);
-  }
+.exit-payment{
+  width: 11rem;
+  padding: 0.7rem 0;
+  font-family: var(--primaryFont);
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: var(--remove-color);
+  color: var(--color1);
+  cursor: pointer;
+}
 
-  .admin-page {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    background-color: var(--color1);
-  }
+.exit-payment:hover {
+  background-color: var(--remove-color-hover);
+}
+
+/* paginas */
+
+.page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color1);
+  width: 100vw;
+  height: var(--mobilevh);
+}
+
+.admin-page {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: var(--color1);
+}
+
+.policy-container {
+  min-height: var(--mobilevh);
+  padding: 1rem;
+  font-family: var(--primaryFont);
+  background-color: white;
+}
+
+.policy-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.policy-section {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.policy-section-title {
+  font-size: 0.85rem;
+  color: var(--color3dark);
+}
+
+.policy-section-content {
+  font-size: 0.8rem;
+  color: var(--dark);
+}
 
 @media (min-width: 899px) {
   .page {
@@ -100,5 +131,9 @@
 
   .continue-disabled {
     width: 20rem;
+  }
+
+  .policy-container {
+    min-height: var(--desktopvh);
   }
 }

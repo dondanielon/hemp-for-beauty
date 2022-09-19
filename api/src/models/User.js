@@ -26,7 +26,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       phone: {
-        type: DataTypes.STRING(10),
+        type: DataTypes.STRING,
         allowNull: false
       },
       role: {
