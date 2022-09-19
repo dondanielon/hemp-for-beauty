@@ -1,4 +1,5 @@
 const { DataTypes } = require("sequelize");
+require("dotenv").config();
 
 module.exports = (sequelize) => {
   sequelize.define("User", {
@@ -24,9 +25,13 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      admin: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false,
+      phone: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      role: {
+        type: DataTypes.STRING(3),
+        defaultValue: process.env.USER_ROLE,
       },
     }, { timestamps: false }
   );

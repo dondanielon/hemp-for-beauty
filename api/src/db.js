@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
   {
     logging: false,
     native: false,
-    define: { timestamps: false }
+    define: { timestamps: false },
   }
 );
 
@@ -17,33 +17,35 @@ const sequelize = new Sequelize(
 const basename = path.basename(__filename);
 const modelDefiners = [];
 fs.readdirSync(path.join(__dirname, "/models"))
-.filter((file) => file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js")
-.forEach((file) => { modelDefiners.push(require(path.join(__dirname, "/models", file)));});
+  .filter(
+    (file) =>
+      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+  )
+  .forEach((file) => {
+    modelDefiners.push(require(path.join(__dirname, "/models", file)));
+  });
 
 modelDefiners.forEach((model) => model(sequelize));
 
 let entries = Object.entries(sequelize.models);
-let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
+let capsEntries = entries.map((entry) => [
+  entry[0][0].toUpperCase() + entry[0].slice(1),
+  entry[1],
+]);
 sequelize.models = Object.fromEntries(capsEntries);
 ////////////////////////////////////////////////////SEQUELIZE INJECTION TO MODELS -> END
 
 ////////////////////////////////////////////////////MODELS RELATIONS -> START
-const { User, Address, Order, Product, Ingredient } = sequelize.models;
+const { User, Order, Product, Ingredient, OrderProduct } = sequelize.models;
 
 Order.belongsTo(User);
 User.hasMany(Order);
 
-Address.belongsTo(User);
-User.hasMany(Address);
-
-Order.belongsTo(Address);
-Address.hasMany(Order);
-
 Product.belongsToMany(Ingredient, { through: "productIngredients" });
 Ingredient.belongsToMany(Product, { through: "productIngredients" });
 
-Order.belongsToMany(Product, {through: "orderProducts"});
-Product.belongsToMany(Order, {through: "orderProducts"});
+Order.belongsToMany(Product, { through: OrderProduct });
+Product.belongsToMany(Order, { through: OrderProduct });
 
 ////////////////////////////////////////////////////MODELS RELATIONS -> END
 

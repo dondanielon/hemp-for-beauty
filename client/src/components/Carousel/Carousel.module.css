@@ -1,0 +1,129 @@
+.container {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  color: var(--color1);
+  overflow: hidden;
+}
+
+.image {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carouselInfo {
+  font-family: var(--primaryFont);
+  width: calc(100% - 2rem);
+  display: grid;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  padding-top: 7rem;
+  position: absolute;
+  bottom: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.87718837535014) 0%, rgba(0,0,0,0) 100%);
+}
+
+.title {
+  font-size: small;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+.description {
+  font-size: large;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.redirect {
+  align-self: flex-start;
+  padding: 1rem 1rem;
+  max-width: 15rem;
+  font-weight: 600;
+  color: var(--dark);
+  border: none;
+  background-color: var(--color3);
+  border-radius: .3rem;
+  font-family: var(--primaryFont);
+}
+
+.redirect:hover {
+  cursor: pointer;
+  background-color: var(--color2);
+}
+
+.dotContainer {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.activeDot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--color3);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: var(--color1);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+@keyframes scaledown {
+  from {
+    transform: scale(1.15);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.scaledown {
+  animation-name: scaledown;
+  animation-duration: 1s;
+  transition: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+  transition: 1s;
+}
+
+@media (min-width: 899px) {
+  .carouselInfo {
+    width: calc(100% - 6rem);
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1199px) {
+  .container {
+    height: var(--desktopvh);
+  }
+}

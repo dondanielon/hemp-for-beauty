@@ -1,0 +1,16 @@
+
+COSAS POR HACER EN EL BACKEND////////////
+- Reorganizar el modelo de ordenes, agregar campos necesarios para el order
+- Ruta para obtener lista de todas las ordenes para el administrador
+- Ruta para realizar una ordenen
+- Ruta para guardar un address
+- Ruta para enviar emails como administrador
+- Modificar modelo de usuario para saber si quieren recibir notificaciones
+
+
+
+COSAS POR HACER EN EL FRONTEND///////////
+
+- Hacer componente redirect sin navbar que para hacer login
+- Hacer componente de no tener permisos
+- Hacer pagina de usuarios, pedidos, email, administar

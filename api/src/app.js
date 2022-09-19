@@ -9,7 +9,10 @@ const server = express();
 server.name = "API";
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
-server.use(express.json());
+server.use((req, res, next) => {
+  if (req.originalUrl === "/api/payment/webhook") next();
+  else express.json()(req, res, next);
+});
 server.use(cookieParser());
 server.use(morgan("dev"));
 server.use(cors());

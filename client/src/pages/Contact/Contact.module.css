@@ -1,0 +1,35 @@
+.page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color1);
+    width: 100%;
+    height: var(--mobilevh);
+}
+
+.container {
+    margin-top: 5rem;
+    margin-bottom: auto;
+    width: 22rem;
+    font-family: var(--primaryFont);
+}
+
+.title {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--dark);
+}
+
+@media (min-width: 899px) {
+    .page {
+        height: var(--desktopvh);
+    }
+    .container {
+        margin-top: 8rem;
+        margin-bottom: auto;
+        width: 40rem;
+    }
+}

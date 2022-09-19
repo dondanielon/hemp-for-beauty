@@ -1,0 +1,161 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--primaryFont);
+  width: calc(100% - 2rem);
+  border-radius: .2rem;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.12); 
+box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.12);
+}
+
+@keyframes scaledown {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.scaledown {
+  animation-name: scaledown;
+  animation-duration: 3s;
+  transition: 3s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+  transition: 3s;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mainTop {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.mainBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info {
+  margin-top: 1rem;
+  display: block;
+}  
+
+.image {
+  object-position: center;
+  object-fit: contain;
+  height: 9rem;
+}
+
+.mainInfo {
+  display: grid;
+  text-align: left;
+  gap: 1rem;
+}
+
+.showInfo {
+  padding: 0.5rem 0;
+  background-color: var(--color3);
+  color: var(--dark);
+}
+
+.showInfo:hover {
+  background-color: var(--color3dark);
+}
+
+.addTo {
+  padding: 0.5rem 0;
+  background-color: var(--text);
+  color: var(--color1);
+  width: 100%;
+}
+
+.addTo:hover {
+  background-color: var(--color4);
+}
+
+.hidden {
+  display: none;
+}
+
+.addItem {
+  display: flex;
+  align-items: center;
+}
+
+.selectQuantity {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+  width: 25%;
+}
+
+.moreless {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2rem;
+  border: none;
+  background-color: var(--dark);
+  color: var(--color1);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.quantity {
+  display: flex;
+  height: 2.5rem;
+  width: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 899px) {
+  .main {
+    flex-direction: row;
+  }
+  .mainTop {
+    width: 70%;
+  }
+  .mainBottom {
+    width: 30%;
+    margin: auto 0;
+  }
+  .image{
+    height: 12rem;
+  }
+  .info{
+    display: flex;
+  }
+  .ingredients {
+    width: 70%;
+  }
+  .specs {
+    width: 30%;
+  }
+}

@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  padding: 1rem 0;
+  width: 100%;
+  height: 4rem;
+  gap: 1rem;
+  align-items: center;
+  font-family: var(--primaryFont);
+  background-color: var(--color1);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  color: var(--dark);
+  width: 80%;
+}
+
+.image {
+  object-position: center;
+  object-fit: contain;
+  height: 4rem;
+}
+
+
+.add, .remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 1.5rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--color3 );
+}
+
+.disabled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 1.5rem;
+  border: none;
+  background-color: transparent;
+  color: var(--color4);
+}
+
+.infoName {
+  font-weight: 500;
+}
+
+.infoLabel {
+  font-size: small;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+}
